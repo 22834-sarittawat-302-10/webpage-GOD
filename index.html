@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarittawat - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- หน้าจอ Loading -->
+    <div id="preloader">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReT26x2Qsf2vgrX2iwU1pHzKJ4AzzcebeoSKG9KHyTcIUFEh_cTft8p9Q&s=10" alt="Loading...">
+        <p>Loading Magma Core...</p>
+    </div>
+
+    <!-- Video Background -->
+    <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/rTtMtX2B9ps?autoplay=1&mute=0&loop=1&playlist=rTtMtX2B9ps&controls=0&showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+    
+    <!-- เปลวไฟขอบจอ -->
+    <div class="screen-fire-border"></div>
+
+    <header>
+        <nav>
+            <div class="logo">Pangpond.<span>Portfolio</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">หน้าแรก</a></li>
+                <li><a href="profile.html">ประวัติส่วนตัว</a></li>
+                <li><a href="education.html">การศึกษา</a></li>
+                <li><a href="hobby.html">งานอดิเรก</a></li>
+                <li><a href="contact.html">ติดต่อ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="hero-section">
+        <div class="hero-content glass-card lava-effect">
+            <div class="lava-drip"></div>
+            <h1>สวัสดีครับ ผม <span>ศริตวรรธน์</span></h1>
+            <h2>(ปังปอนด์)</h2>
+            <p class="tagline">"นักเรียน ม.3 ที่หลงใหลในเทคโนโลยีและการออกแบบ"</p>
+            <p class="quote">Quote: <i>It's lapis</i></p>
+            <div class="hero-buttons">
+                <a href="profile.html" class="btn primary-btn">รู้จักฉันมากขึ้น</a>
+                <a href="hobby.html" class="btn secondary-btn">ดูงานอดิเรกของฉัน</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="img-wrapper lava-effect">
+                <div class="lava-drip"></div>
+                <img src="https://www.khaosod.co.th/wpapp/uploads/2019/06/62216820_2484852834909243_7694992050374049792_n.jpg" alt="รูปโปรไฟล์ ปังปอนด์">
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Sarittawat Yotdechakit (Pangpond) | ม.3/2 | Web Design Project</p>
+    </footer>
+
+    <!-- Script สำหรับ Effect เมาส์และคลิก -->
+    <script src="script.js"></script>
+    <script>
+        // Preloader Logic
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const preloader = document.getElementById('preloader');
+                preloader.style.opacity = '0';
+                setTimeout(() => { preloader.style.display = 'none'; }, 500);
+            }, 1500);
+        });
+
+        // Mouse Sparks Effect
+        document.addEventListener('mousemove', function(e) {
+            let spark = document.createElement('div');
+            spark.className = 'mouse-spark';
+            spark.style.left = e.pageX + 'px';
+            spark.style.top = e.pageY + 'px';
+            document.body.appendChild(spark);
+            setTimeout(() => { spark.remove(); }, 500);
+        });
+
+        // Click Magma Explosion Effect
+        document.addEventListener('click', function(e) {
+            for(let i=0; i<12; i++) {
+                let magma = document.createElement('div');
+                magma.className = 'magma-blast';
+                magma.style.left = e.pageX + 'px';
+                magma.style.top = e.pageY + 'px';
+                let angle = Math.random() * Math.PI * 2;
+                let velocity = 30 + Math.random() * 60;
+                magma.style.setProperty('--dx', Math.cos(angle) * velocity + 'px');
+                magma.style.setProperty('--dy', Math.sin(angle) * velocity + 'px');
+                document.body.appendChild(magma);
+                setTimeout(() => { magma.remove(); }, 600);
+            }
+        });
+    </script>
+</body>
+</html>
