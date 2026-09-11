@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hobbies - Sarittawat</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/rTtMtX2B9ps?autoplay=1&mute=0&loop=1&playlist=rTtMtX2B9ps&controls=0&showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+    <div class="screen-fire-border"></div>
+
+    <header>
+        <nav>
+            <div class="logo">Pangpond.<span>Portfolio</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html">หน้าแรก</a></li>
+                <li><a href="profile.html">ประวัติส่วนตัว</a></li>
+                <li><a href="education.html">การศึกษา</a></li>
+                <li><a href="hobby.html" class="active">งานอดิเรก</a></li>
+                <li><a href="contact.html">ติดต่อ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="section-header glass-card">
+            <h2>งานอดิเรกและความสนใจ <span>(Hobbies)</span></h2>
+            <p>สิ่งที่ผมชอบทำในเวลาว่าง</p>
+        </section>
+
+        <section class="hobby-grid">
+            <div class="glass-card hobby-card lava-effect">
+                <div class="lava-drip"></div>
+                <div class="hobby-icon">🎮</div>
+                <h3>เล่นเกม</h3>
+                <p>ชอบเล่นเกม ROBLOX เพื่อความสนุกและผ่อนคลาย</p>
+            </div>
+
+            <div class="glass-card hobby-card lava-effect">
+                <div class="lava-drip"></div>
+                <div class="hobby-icon">🎵</div>
+                <h3>ฟังเพลง</h3>
+                <p>เพลงโปรดของผมคือ Marry on a cross</p>
+            </div>
+
+            <div class="glass-card hobby-card lava-effect">
+                <div class="lava-drip"></div>
+                <div class="hobby-icon">💻</div>
+                <h3>เทคโนโลยี</h3>
+                <p>สนใจเกี่ยวกับ Github และการพัฒนาโค้ด</p>
+            </div>
+
+            <div class="glass-card hobby-card lava-effect">
+                <div class="lava-drip"></div>
+                <div class="hobby-icon">⚽</div>
+                <h3>เล่นกีฬา</h3>
+                <p>ชอบเตะฟุตบอลเพื่อออกกำลังกาย</p>
+            </div>
+
+            <div class="glass-card hobby-card lava-effect">
+                <div class="lava-drip"></div>
+                <div class="hobby-icon">📷</div>
+                <h3>ถ่ายภาพ</h3>
+                <p>ชอบถ่ายภาพบรรยากาศธรรมชาติในเชียงใหม่</p>
+            </div>
+
+            <div class="glass-card hobby-card lava-effect">
+                <div class="lava-drip"></div>
+                <div class="hobby-icon">📚</div>
+                <h3>อ่านหนังสือ</h3>
+                <p>อ่านหนังสือเกี่ยวกับการพัฒนาตนเองและเทคโนโลยี</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Sarittawat Yotdechakit (Pangpond) | ม.3/2 | Web Design Project</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        document.addEventListener('mousemove', function(e) {
+            let spark = document.createElement('div');
+            spark.className = 'mouse-spark';
+            spark.style.left = e.pageX + 'px';
+            spark.style.top = e.pageY + 'px';
+            document.body.appendChild(spark);
+            setTimeout(() => { spark.remove(); }, 500);
+        });
+        document.addEventListener('click', function(e) {
+            for(let i=0; i<12; i++) {
+                let magma = document.createElement('div');
+                magma.className = 'magma-blast';
+                magma.style.left = e.pageX + 'px';
+                magma.style.top = e.pageY + 'px';
+                let angle = Math.random() * Math.PI * 2;
+                let velocity = 30 + Math.random() * 60;
+                magma.style.setProperty('--dx', Math.cos(angle) * velocity + 'px');
+                magma.style.setProperty('--dy', Math.sin(angle) * velocity + 'px');
+                document.body.appendChild(magma);
+                setTimeout(() => { magma.remove(); }, 600);
+            }
+        });
+    </script>
+</body>
+</html>
