@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Sarittawat</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/rTtMtX2B9ps?autoplay=1&mute=0&loop=1&playlist=rTtMtX2B9ps&controls=0&showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+    <div class="screen-fire-border"></div>
+
+    <header>
+        <nav>
+            <div class="logo">Pangpond.<span>Portfolio</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html">หน้าแรก</a></li>
+                <li><a href="profile.html" class="active">ประวัติส่วนตัว</a></li>
+                <li><a href="education.html">การศึกษา</a></li>
+                <li><a href="hobby.html">งานอดิเรก</a></li>
+                <li><a href="contact.html">ติดต่อ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="section-header glass-card">
+            <h2>ประวัติส่วนตัว <span>(Profile)</span></h2>
+            <p>ข้อมูลส่วนตัวของฉัน</p>
+        </section>
+
+        <section class="profile-layout">
+            <div class="profile-image-col glass-card lava-effect">
+                <div class="lava-drip"></div>
+                <img src="https://www.khaosod.co.th/wpapp/uploads/2019/06/62216820_2484852834909243_7694992050374049792_n.jpg" alt="รูปโปรไฟล์ ปังปอนด์">
+                <h3>ศริตวรรธน์ ยศเดชากิตติ์</h3>
+                <p>นักเรียน ม.3 ที่หลงใหลในเทคโนโลยี</p>
+            </div>
+            
+            <div class="profile-info-col">
+                <div class="glass-card info-card lava-effect">
+                    <div class="lava-drip"></div>
+                    <h3>ข้อมูลพื้นฐาน</h3>
+                    <ul>
+                        <li><strong>ชื่อ-นามสกุล:</strong> ศริตวรรธน์ ยศเดชากิตติ์ (Sarittawat Yotdechakit)</li>
+                        <li><strong>ชื่อเล่น:</strong> ปังปอนด์</li>
+                        <li><strong>อายุ:</strong> 14 ปี</li>
+                        <li><strong>วันเกิด:</strong> 28 มีนาคม 2555</li>
+                        <li><strong>จังหวัด:</strong> เชียงใหม่</li>
+                    </ul>
+                </div>
+
+                <div class="glass-card about-card lava-effect">
+                    <div class="lava-drip"></div>
+                    <h3>เกี่ยวกับฉัน (About Me)</h3>
+                    <p>สวัสดีครับ ผมปังปอนด์ ปัจจุบันกำลังศึกษาอยู่ชั้น ม.3 ผมมีความสนใจอย่างมากในเรื่องของการออกแบบและเทคโนโลยีคอมพิวเตอร์ ชอบใช้เวลาว่างในการพัฒนาทักษะใหม่ๆ และค้นหาสิ่งที่น่าสนใจในโลกอินเทอร์เน็ตอยู่เสมอ</p>
+                    <p><strong>คติประจำใจ:</strong> <i>It's lapis</i></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Sarittawat Yotdechakit (Pangpond) | ม.3/2 | Web Design Project</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        document.addEventListener('mousemove', function(e) {
+            let spark = document.createElement('div');
+            spark.className = 'mouse-spark';
+            spark.style.left = e.pageX + 'px';
+            spark.style.top = e.pageY + 'px';
+            document.body.appendChild(spark);
+            setTimeout(() => { spark.remove(); }, 500);
+        });
+        document.addEventListener('click', function(e) {
+            for(let i=0; i<12; i++) {
+                let magma = document.createElement('div');
+                magma.className = 'magma-blast';
+                magma.style.left = e.pageX + 'px';
+                magma.style.top = e.pageY + 'px';
+                let angle = Math.random() * Math.PI * 2;
+                let velocity = 30 + Math.random() * 60;
+                magma.style.setProperty('--dx', Math.cos(angle) * velocity + 'px');
+                magma.style.setProperty('--dy', Math.sin(angle) * velocity + 'px');
+                document.body.appendChild(magma);
+                setTimeout(() => { magma.remove(); }, 600);
+            }
+        });
+    </script>
+</body>
+</html>
